@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Make every guest feel at home and every stay easier with the HostFlow Kit guest welcome and property guide templates.">
+  <meta name="theme-color" content="#f6f2e9">
+  <title>HostFlow Kit | Make every guest feel at home</title>
+  <style>
+    :root {
+      --cream: #f6f2e9;
+      --paper: #fffdf8;
+      --ink: #30352d;
+      --muted: #687064;
+      --sage: #7d8b72;
+      --sage-dark: #52634d;
+      --sand: #e7ddca;
+      --line: #e8e2d6;
+      --white: #fff;
+      --shadow: 0 18px 50px rgba(58, 61, 49, .09);
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--cream); color: var(--ink); font-family: var(--sans); line-height: 1.6; }
+    a { color: inherit; }
+    .wrap { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .topbar { padding: 22px 0; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 11px; text-decoration: none; font-weight: 700; letter-spacing: .02em; }
+    .brand-mark { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 11px 11px 11px 3px; background: var(--sage-dark); color: white; font-family: var(--serif); font-size: 20px; }
+    nav { display: flex; gap: 27px; align-items: center; font-size: 13px; color: var(--muted); }
+    nav a { text-decoration: none; }
+    nav a:hover { color: var(--sage-dark); }
+    .nav-cta, .button { display: inline-flex; justify-content: center; align-items: center; border-radius: 999px; padding: 12px 21px; background: var(--sage-dark); color: white; text-decoration: none; font-size: 13px; font-weight: 650; border: 1px solid var(--sage-dark); transition: transform .2s, background .2s; }
+    .nav-cta:hover, .button:hover { background: #40513c; transform: translateY(-2px); }
+    .hero { padding: 76px 0 86px; display: grid; grid-template-columns: 1.03fr .97fr; gap: 58px; align-items: center; }
+    .eyebrow { color: var(--sage-dark); text-transform: uppercase; letter-spacing: .16em; font-size: 10px; font-weight: 750; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { font: 500 clamp(42px, 5.5vw, 68px)/1.06 var(--serif); letter-spacing: -.045em; margin: 18px 0 22px; max-width: 610px; }
+    h1 em { color: var(--sage-dark); font-weight: 400; }
+    .hero-copy { color: var(--muted); font-size: 16px; max-width: 490px; margin-bottom: 29px; }
+    .hero-actions { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+    .text-link { font-size: 13px; text-decoration: none; color: var(--sage-dark); font-weight: 650; }
+    .note { margin-top: 18px; color: #858879; font-size: 11px; }
+    .visual { position: relative; min-height: 420px; display: grid; place-items: center; }
+    .sun { position: absolute; width: 310px; height: 310px; border-radius: 50%; background: #e8e4d5; right: 8%; top: 8%; }
+    .guide { position: absolute; background: var(--paper); border: 1px solid rgba(90, 90, 70, .1); box-shadow: var(--shadow); border-radius: 5px; padding: 26px; }
+    .guide.main { width: 260px; min-height: 330px; transform: rotate(-4deg); z-index: 2; left: 14%; top: 8%; }
+    .guide.side { width: 220px; min-height: 275px; transform: rotate(7deg); right: 5%; bottom: 4%; }
+    .guide-kicker { color: var(--sage); font-size: 8px; text-transform: uppercase; letter-spacing: .18em; }
+    .guide h3 { font: 25px/1.12 var(--serif); margin: 12px 0; }
+    .guide p { font-size: 9px; color: #777b70; }
+    .guide-rule { height: 1px; background: var(--line); margin: 16px 0; }
+    .fake-line { height: 5px; border-radius: 9px; background: #e9e6dc; margin: 9px 0; }
+    .fake-line.short { width: 60%; }
+    .leaf { position: absolute; right: 8%; top: 3%; color: var(--sage); font: 100px var(--serif); opacity: .55; transform: rotate(24deg); }
+    .trust { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 20px 0; color: var(--muted); font-size: 12px; text-align: center; letter-spacing: .04em; }
+    section { padding: 86px 0; }
+    .section-head { max-width: 620px; margin: 0 auto 42px; text-align: center; }
+    h2 { font: 500 clamp(32px, 4vw, 46px)/1.12 var(--serif); letter-spacing: -.03em; margin: 13px 0; }
+    .section-head p { color: var(--muted); font-size: 14px; }
+    .benefits { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .benefit { background: rgba(255,253,248,.72); border: 1px solid var(--line); border-radius: 8px; padding: 26px; }
+    .benefit .num { color: var(--sage); font: 26px var(--serif); }
+    .benefit h3 { font: 21px var(--serif); margin: 14px 0 8px; }
+    .benefit p { color: var(--muted); font-size: 12px; margin: 0; }
+    .kit-section { background: #eeeadf; }
+    .documents { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .doc { background: var(--paper); padding: 23px; border-radius: 5px; border: 1px solid #e4dfd3; min-height: 190px; }
+    .doc-icon { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; background: #edf0e8; color: var(--sage-dark); font: 17px var(--serif); }
+    .doc h3 { font: 20px var(--serif); margin: 15px 0 6px; }
+    .doc p { font-size: 12px; color: var(--muted); margin: 0; }
+    .price-card { width: min(600px, 100%); margin: 0 auto; background: var(--paper); border: 1px solid var(--line); border-radius: 10px; box-shadow: var(--shadow); padding: 42px; text-align: center; }
+    .price { font: 52px var(--serif); margin: 12px 0 2px; }
+    .price-card p { color: var(--muted); font-size: 13px; }
+    .included { list-style: none; padding: 0; margin: 24px auto 28px; max-width: 330px; text-align: left; font-size: 13px; }
+    .included li { padding: 7px 0; border-bottom: 1px solid var(--line); }
+    .included li::before { content: "✓"; color: var(--sage-dark); margin-right: 10px; font-weight: 700; }
+    .coming { display: inline-block; margin-top: 14px; color: #8b806b; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+    .faq { max-width: 760px; margin: auto; }
+    details { border-bottom: 1px solid var(--line); padding: 18px 0; }
+    summary { cursor: pointer; font: 19px var(--serif); }
+    details p { color: var(--muted); font-size: 13px; margin: 12px 0 0; }
+    footer { background: #343d32; color: #f8f5ec; padding: 36px 0; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+    footer p { color: #c4cbbd; font-size: 11px; margin: 5px 0 0; }
+    footer a { color: #f8f5ec; font-size: 12px; text-decoration: none; }
+    @media (max-width: 760px) {
+      .topbar { align-items: flex-start; }
+      nav { gap: 13px; flex-wrap: wrap; justify-content: flex-end; font-size: 11px; }
+      nav a:not(.nav-cta) { display: none; }
+      .hero { grid-template-columns: 1fr; padding: 52px 0 58px; gap: 20px; }
+      .visual { min-height: 350px; }
+      .guide.main { left: 8%; width: 230px; min-height: 300px; }
+      .guide.side { right: 2%; width: 190px; min-height: 245px; }
+      .sun { width: 260px; height: 260px; }
+      section { padding: 64px 0; }
+      .benefits, .documents { grid-template-columns: 1fr; }
+      .benefit { padding: 22px; }
+      .price-card { padding: 30px 22px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: .01ms !important; } }
+  </style>
+</head>
+<body>
+  <header class="wrap topbar">
+    <a class="brand" href="#" aria-label="HostFlow Kit home"><span class="brand-mark">H</span><span>HostFlow Kit</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#inside">What's inside</a>
+      <a href="#benefits">Why HostFlow</a>
+      <a class="nav-cta" href="#kit">Explore the kit</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="wrap hero">
+      <div>
+        <div class="eyebrow">A calmer way to host</div>
+        <h1>Make every guest feel <em>at home.</em></h1>
+        <p class="hero-copy">A thoughtfully designed welcome and property guide kit that helps vacation rental hosts share the right information, set clear expectations and create a smoother stay.</p>
+        <div class="hero-actions">
+          <a class="button" href="#kit">Discover the HostFlow Kit</a>
+          <a class="text-link" href="#inside">See what's included →</a>
+        </div>
+        <p class="note">Editable templates for independent hosts and small accommodation businesses.</p>
+      </div>
+      <div class="visual" aria-label="Illustration of welcome guide templates">
+        <div class="sun"></div><div class="leaf">✳</div>
+        <article class="guide main">
+          <div class="guide-kicker">Your stay, made simple</div>
+          <h3>Welcome<br>to your home<br>away from home.</h3>
+          <div class="guide-rule"></div>
+          <p>A little guide to help you settle in, feel comfortable and enjoy your stay.</p>
+          <div class="fake-line"></div><div class="fake-line"></div><div class="fake-line short"></div>
+          <div class="guide-rule"></div><div class="guide-kicker">HOST • PROPERTY • LOCAL GUIDE</div>
+        </article>
+        <article class="guide side">
+          <div class="guide-kicker">A thoughtful stay</div>
+          <h3>The little<br>details matter.</h3>
+          <p>Simple instructions. Clear information. More time to enjoy.</p>
+          <div class="guide-rule"></div><div class="fake-line"></div><div class="fake-line short"></div><div class="fake-line"></div>
+        </article>
+      </div>
+    </section>
+
+    <div class="trust">MADE FOR VACATION RENTALS · EASY TO CUSTOMISE · CLEAR FOR EVERY GUEST</div>
+
+    <section class="wrap" id="benefits">
+      <div class="section-head">
+        <div class="eyebrow">Less back-and-forth, more welcoming stays</div>
+        <h2>Good hosting starts with clear communication.</h2>
+        <p>Give guests the information they need before they have to ask. Keep your instructions consistent and make each arrival feel considered.</p>
+      </div>
+      <div class="benefits">
+        <article class="benefit"><div class="num">01</div><h3>Save time</h3><p>Keep essential property information in one organised set of guides instead of rewriting the same messages.</p></article>
+        <article class="benefit"><div class="num">02</div><h3>Set clear expectations</h3><p>Share check-in details, house rules and check-out steps in a format guests can follow easily.</p></article>
+        <article class="benefit"><div class="num">03</div><h3>Make it yours</h3><p>Customise the templates with your property details, local recommendations and hosting style.</p></article>
+      </div>
+    </section>
+
+    <section class="kit-section" id="inside">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Everything guests need to know</div>
+          <h2>One kit. Six practical guides.</h2>
+          <p>A clear starting point for the information you share with every guest. Add your own details and make each guide fit your property.</p>
+        </div>
+        <div class="documents">
+          <article class="doc"><div class="doc-icon">01</div><h3>Welcome Guide</h3><p>A warm introduction to the property and the essentials for a comfortable stay.</p></article>
+          <article class="doc"><div class="doc-icon">02</div><h3>House Rules</h3><p>Friendly, straightforward guidance that helps guests respect your space.</p></article>
+          <article class="doc"><div class="doc-icon">03</div><h3>Check-in Guide</h3><p>Arrival instructions, access details and the first steps after reaching the property.</p></article>
+          <article class="doc"><div class="doc-icon">04</div><h3>Check-out Guide</h3><p>A simple departure checklist so guests know exactly what to do before leaving.</p></article>
+          <article class="doc"><div class="doc-icon">05</div><h3>Local Information Guide</h3><p>Space to share nearby essentials, useful services and your favourite local places.</p></article>
+          <article class="doc"><div class="doc-icon">06</div><h3>Host Customisation Guide</h3><p>Prompts to help you personalise the kit and keep your information up to date.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap" id="kit">
+      <div class="section-head">
+        <div class="eyebrow">The HostFlow Kit</div>
+        <h2>A more organised guest experience.</h2>
+        <p>Start with a ready-made structure, then adapt the wording and details to your own accommodation.</p>
+      </div>
+      <div class="price-card">
+        <div class="eyebrow">Launch price planned</div>
+        <div class="price">US$14.90</div>
+        <p>One digital kit · Six editable guide templates</p>
+        <ul class="included">
+          <li>Welcome Guide</li><li>House Rules</li><li>Check-in and Check-out Guides</li><li>Local Information Guide</li><li>Host Customisation Guide</li>
+        </ul>
+        <span class="button" aria-disabled="true" style="opacity:.55;cursor:not-allowed">Purchase link coming soon</span>
+        <div><span class="coming">Not available for purchase yet</span></div>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">A few useful answers</div>
+        <h2>Frequently asked questions</h2>
+      </div>
+      <div class="faq">
+        <details><summary>Who is the HostFlow Kit for?</summary><p>It is being created for independent vacation rental hosts, short-term rental owners and small accommodation managers.</p></details>
+        <details><summary>Can I customise the guides?</summary><p>Yes. The kit is planned as an editable set of templates, so you can add your property information and adjust the wording to suit your needs.</p></details>
+        <details><summary>Is the kit available now?</summary><p>Not yet. The product files and secure checkout are still being prepared. The purchase link will be added once they are ready.</p></details>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <div><a class="brand" href="#"><span class="brand-mark" style="background:#e9e5d9;color:#465440">H</span><span>HostFlow Kit</span></a><p>Make every guest feel at home. Make every stay easier.</p></div>
+      <a href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Back to top ↑</a>
+    </div>
+  </footer>
+</body>
+</html>
