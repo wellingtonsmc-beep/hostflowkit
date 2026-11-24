@@ -1,0 +1,37 @@
+name: Publicar Missão Recenseador 2026
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "missao-recenseador/**"
+      - ".github/workflows/publicar-missao-recenseador.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages-missao-recenseador"
+  cancel-in-progress: true
+
+jobs:
+  publicar:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar arquivos
+        uses: actions/checkout@v4
+      - name: Configurar GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Preparar site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./missao-recenseador
+      - name: Publicar site
+        id: deployment
+        uses: actions/deploy-pages@v4
